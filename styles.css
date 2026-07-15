@@ -9,7 +9,8 @@
   --green: #1E7A4C;
 }
 
-html { scroll-behavior: smooth }
+html { scroll-behavior: smooth; background: var(--ink) }
+html, body { overscroll-behavior-y: none }
 body { margin: 0; background: var(--cream); color: var(--ink); font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased }
 a { color: var(--ink); text-decoration: none }
 a:hover { color: var(--accent) }
