@@ -70,7 +70,7 @@ a:hover { color: var(--accent) }
 .section { max-width: 1200px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; position: relative }
 .section.bordered { border-top: 2px solid var(--ink) }
 .section-label { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .14em; color: var(--accent); font-weight: 500 }
-#experience .section-label, #work .section-label, #stack .section-label { margin-bottom: 56px }
+#experience .section-label, #projects .section-label, #stack .section-label { margin-bottom: 56px }
 #offclock .section-label { margin-bottom: 16px }
 #contact .section-label { margin-bottom: 32px }
 
