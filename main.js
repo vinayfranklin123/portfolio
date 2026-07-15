@@ -69,6 +69,7 @@ function setupBall() {
   });
   const tick = () => {
     const W = hero.offsetWidth, H = hero.offsetHeight;
+    if (!W || !H) { requestAnimationFrame(tick); return; }
     vy += 0.55; x += vx; y += vy; rot += vr;
     vx *= 0.995; vr *= 0.99;
     const floor = H - ground - size;
