@@ -20,7 +20,7 @@
   <div class="nav-links">
     <a href="#about">about</a>
     <a href="#experience">experience</a>
-    <a href="#work">work</a>
+    <a href="#projects">projects</a>
     <a href="#offclock">off the clock</a>
     <a href="mailto:vinayfranklin98@gmail.com" class="nav-cta">say hi ↗</a>
   </div>
@@ -50,7 +50,7 @@
     </h1>
     <p class="hero-sub" style="animation-delay:.62s">Vinay Franklin — founding backend engineer on UPI payments at Pine Labs. Go, distributed systems, and the unglamorous discipline of making money move correctly at scale.</p>
     <div class="hero-ctas" style="animation-delay:.74s">
-      <a href="#work" class="btn-primary">see the work →</a>
+      <a href="#projects" class="btn-primary">see the projects →</a>
       <a href="mailto:vinayfranklin98@gmail.com" class="btn-secondary">email me</a>
     </div>
     <div class="hero-hint" style="animation-delay:.86s">psst — the football down there is kickable ↘</div>
@@ -134,79 +134,52 @@
   </div>
 </section>
 
-<section id="work" class="section bordered">
-  <div data-reveal class="section-label">03 / SELECTED WORK</div>
+<section id="projects" class="section bordered">
+  <div data-reveal class="section-label">03 / SIDE PROJECTS</div>
   <div class="work-list">
     <article data-reveal class="work-card">
       <div class="card-bar">
         <span class="card-dot card-dot--r"></span><span class="card-dot card-dot--y"></span><span class="card-dot card-dot--g"></span>
-        <span class="card-file">01 · pine labs · webhook-framework.go</span>
+        <span class="card-file">01 · buildloop · stayfolio</span>
       </div>
       <div class="card-body">
         <div>
-          <h3 class="card-title">Async Webhook Framework</h3>
-          <p class="card-desc">A generic webhook delivery framework in Go — worker pools, automatic retries, dead-letter handling — built once, reused across every bank integration. When Axis Bank's v3 migration landed on it, the framework needed zero changes.</p>
+          <h3 class="card-title">Stayfolio</h3>
+          <p class="card-desc">Every stay, every city, one dashboard. A management-and-accounting platform for global short-let hosts — it unifies revenue, expenses, and occupancy across countries and currencies, ingests both Airbnb and direct bookings, and answers portfolio questions with a built-in AI assistant. Designed, built, shipped, and hosted solo — live today with paying customers.</p>
           <div class="chips">
-            <span class="chip">Go</span>
-            <span class="chip">Worker pools</span>
-            <span class="chip">Dead-letter queues</span>
-            <span class="chip">Idempotency</span>
+            <span class="chip">Multi-currency</span>
+            <span class="chip">Airbnb + direct ingestion</span>
+            <span class="chip">Occupancy tracking</span>
+            <span class="chip">AI insights</span>
+            <span class="chip">PWA</span>
           </div>
-          <div class="card-note">← the terminal is live, watch it retry</div>
-        </div>
-        <div class="card-aside">
-          <div class="term">
-            <div class="term-head"><span>webhook-worker · live</span></div>
-            <pre id="vf-term" class="term-body"></pre>
-          </div>
-        </div>
-      </div>
-    </article>
-    <article data-reveal class="work-card">
-      <div class="card-bar">
-        <span class="card-dot card-dot--r"></span><span class="card-dot card-dot--y"></span><span class="card-dot card-dot--g"></span>
-        <span class="card-file">02 · pine labs · sqs-pipeline.go</span>
-      </div>
-      <div class="card-body">
-        <div>
-          <h3 class="card-title">Fault-Tolerant SQS Pipeline</h3>
-          <p class="card-desc">A two-phase message pipeline — sync-receive, async-consume — with long-polling, configurable worker pools, and soft/hard-failure retry semantics driven by visibility timeouts. Panic-isolated processing means one poisoned message never takes down a worker.</p>
-          <div class="chips">
-            <span class="chip">Go</span>
-            <span class="chip">AWS SQS</span>
-            <span class="chip">Visibility timeouts</span>
-            <span class="chip">Panic isolation</span>
-          </div>
+          <a class="card-link" href="https://demo.solutionsbyfranklin.com/login" target="_blank" rel="noopener">visit the live demo ↗</a>
         </div>
         <div class="card-aside card-aside--gap">
-          <div class="diagram">
-            <div class="diagram-label">QUEUE → WORKER POOL</div>
-            <div class="qtrack">
-              <div class="qline"></div>
-              <span class="qdot"></span>
-              <span class="qdot" style="animation-delay:.9s"></span>
-              <span class="qdot" style="animation-delay:2s"></span>
-              <div class="qworker">wrk</div>
+          <div class="dash">
+            <div class="dash-head">
+              <span class="dash-brand">stayfolio</span>
+              <div class="dash-cur"><span>₹</span><span>$</span><span>€</span><span>£</span></div>
             </div>
-            <div class="qlegend"><span>sync-receive</span><span>async-consume</span></div>
+            <div class="dash-metrics">
+              <div class="dash-metric-label">REVENUE TREND</div>
+              <div class="dash-chart">
+                <span style="height:34%"></span><span style="height:50%"></span><span style="height:44%"></span><span style="height:63%"></span><span style="height:57%"></span><span style="height:79%"></span><span style="height:92%"></span>
+              </div>
+            </div>
+            <div class="dash-foot">
+              <div><div class="dash-num">87%</div><div class="dash-sub">OCCUPANCY</div></div>
+              <div><div class="dash-num">4</div><div class="dash-sub">CURRENCIES</div></div>
+              <div><div class="dash-num">AI</div><div class="dash-sub">INSIGHTS</div></div>
+            </div>
           </div>
           <div class="stats">
-            <div><div class="stat-num">2-phase</div><div class="stat-label">RECEIVE → CONSUME</div></div>
-            <div><div class="stat-num">100%</div><div class="stat-label">PANIC-ISOLATED</div></div>
+            <div><div class="stat-num">Profitable</div><div class="stat-label">PAYING CUSTOMERS</div></div>
+            <div><div class="stat-num">Solo</div><div class="stat-label">BUILT · SHIPPED · HOSTED</div></div>
           </div>
         </div>
       </div>
     </article>
-  </div>
-  <div data-reveal class="shipped">
-    <div class="shipped-label">ALSO SHIPPED</div>
-    <div class="pills">
-      <span class="pill">Real-time WebSocket payment updates</span>
-      <span class="pill">Push-notification subsystem (FCM / SMS / WS)</span>
-      <span class="pill">UPI collect-request flow</span>
-      <span class="pill">BBPS bill payments + dispute lifecycle</span>
-      <span class="pill">Group bill-splitting</span>
-    </div>
   </div>
 </section>
 
