@@ -24,6 +24,7 @@ a:hover { color: var(--accent) }
 
 .page {
   min-height: 100vh;
+  min-height: 100dvh;
   background: var(--cream);
   background-image: linear-gradient(rgba(25, 20, 16, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(25, 20, 16, .045) 1px, transparent 1px);
   background-size: 36px 36px;
@@ -41,7 +42,7 @@ a:hover { color: var(--accent) }
 .nav-cta:hover { background: var(--accent); color: var(--cream) }
 
 /* ---- Hero ---- */
-.hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; overflow: hidden }
+.hero { position: relative; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; overflow: hidden }
 .secret { position: absolute; font-family: 'Caveat', cursive; font-size: 20px; color: var(--faded); opacity: 0; transition: opacity .6s; z-index: 4; pointer-events: none }
 .sticker { position: absolute; border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); cursor: grab; user-select: none; z-index: 5; touch-action: none }
 .hero-inner { position: relative; max-width: 1200px; margin: 0 auto; width: 100%; padding: 120px 48px 100px; box-sizing: border-box }
