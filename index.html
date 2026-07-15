@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vinay Franklin — Backend Engineer</title>
+<meta name="description" content="Vinay Franklin — founding backend engineer on UPI payments at Pine Labs. Go, distributed systems, and payment rails that don't drop a request.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%BD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+<div class="page">
+<div id="vf-progress" class="progress"></div>
+
+<nav class="nav">
+  <a href="#top" class="nav-logo">vinay<span>.</span></a>
+  <div class="nav-links">
+    <a href="#about">about</a>
+    <a href="#experience">experience</a>
+    <a href="#work">work</a>
+    <a href="#offclock">off the clock</a>
+    <a href="mailto:vinayfranklin98@gmail.com" class="nav-cta">say hi ↗</a>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div data-secret class="secret" style="top:14%;right:8%;transform:rotate(-3deg)">99.99% uptime, 100% fan</div>
+  <div data-secret class="secret" style="top:30%;right:16%;transform:rotate(2deg)">Istanbul 2005. never in doubt.</div>
+  <div data-secret class="secret" style="top:52%;right:7%;transform:rotate(-2deg)">no mutexes were harmed</div>
+  <div data-secret class="secret" style="top:66%;right:18%;transform:rotate(3deg)">told you it was worth it :)</div>
+  <div data-sticker class="sticker" style="top:14%;right:8%;transform:rotate(8deg);background:#fff;border-radius:12px;padding:10px 16px;font-family:'Caveat',cursive;font-size:22px;font-weight:600">certified backend guy ✓</div>
+  <div data-sticker class="sticker" style="top:30%;right:16%;transform:rotate(-6deg);background:var(--accent);color:#fff;border-radius:99px;padding:10px 18px;font-weight:700;font-size:15px;letter-spacing:.04em">YNWA ♥</div>
+  <div data-sticker class="sticker" style="top:52%;right:7%;transform:rotate(4deg);background:#FFD84D;border-radius:12px;padding:10px 16px;font-family:'JetBrains Mono',monospace;font-size:13px">go func(){ ship() }()</div>
+  <div data-sticker data-dare class="sticker" style="top:66%;right:18%;transform:rotate(-9deg);background:#fff;border-radius:12px;padding:10px 16px;font-family:'Caveat',cursive;font-size:20px;font-weight:600">drag me, i dare you</div>
+  <div class="hero-inner">
+    <div class="badge"><span class="badge-dot"></span>BANGALORE, IN — OPEN TO WORK</div>
+    <h1 class="hero-title">
+      <span data-word class="word" style="animation-delay:.05s">I</span>
+      <span data-word class="word" style="animation-delay:.11s">build</span>
+      <span data-word class="word" style="animation-delay:.17s">payment</span>
+      <span data-word class="word word-accent" style="animation-delay:.23s">rails</span>
+      <span data-word class="word" style="animation-delay:.29s">that</span>
+      <span data-word class="word" style="animation-delay:.35s">don't</span>
+      <span data-word class="word word-mark" style="animation-delay:.41s">drop</span>
+      <span data-word class="word" style="animation-delay:.47s">a</span>
+      <span data-word class="word" style="animation-delay:.53s">request.</span>
+    </h1>
+    <p class="hero-sub" style="animation-delay:.62s">Vinay Franklin — founding backend engineer on UPI payments at Pine Labs. Go, distributed systems, and the unglamorous discipline of making money move correctly at scale.</p>
+    <div class="hero-ctas" style="animation-delay:.74s">
+      <a href="#work" class="btn-primary">see the work →</a>
+      <a href="mailto:vinayfranklin98@gmail.com" class="btn-secondary">email me</a>
+    </div>
+    <div class="hero-hint" style="animation-delay:.86s">psst — the football down there is kickable ↘</div>
+  </div>
+  <div id="vf-ball" class="ball" title="kick me">⚽</div>
+  <div class="grass"></div>
+</header>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>IDEMPOTENT ✳ RETRY-SAFE ✳ PANIC-ISOLATED ✳ DEAD-LETTERED ✳ EXACTLY-ONCE-ISH ✳ NEVER WALKS ALONE ✳ BUILT TO NOT PAGE YOU ✳ </span>
+    <span>IDEMPOTENT ✳ RETRY-SAFE ✳ PANIC-ISOLATED ✳ DEAD-LETTERED ✳ EXACTLY-ONCE-ISH ✳ NEVER WALKS ALONE ✳ BUILT TO NOT PAGE YOU ✳ </span>
+  </div>
+</div>
+
+<section id="about" class="section">
+  <div class="about-grid">
+    <div data-reveal class="section-label">01 / ABOUT</div>
+    <div class="about-content">
+      <p data-reveal class="about-lede">I started in support engineering, debugging payment outages at <span class="squiggle">2 a.m.<svg viewBox="0 0 120 14"><path d="M2 8 Q 30 2, 60 8 T 118 7" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"></path></svg></span> Now I design the systems that don't page anyone at <span class="squiggle">2 a.m.<svg viewBox="0 0 120 14"><path d="M2 8 Q 30 2, 60 8 T 118 7" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"></path></svg></span></p>
+      <p data-reveal class="about-body">That path — OLA, Razorpay, Pine Labs — means I've seen payment infrastructure from every angle: the ticket queue, the enterprise customization, and now the founding backend of a UPI product. I care about idempotency, retry semantics, and failure modes most people only meet in postmortems.</p>
+      <div data-reveal class="about-note">true story btw</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section bordered">
+  <div data-reveal class="section-label">02 / EXPERIENCE</div>
+  <div id="vf-timeline" class="timeline">
+    <div class="timeline-rail"></div>
+    <div id="vf-timeline-fill" class="timeline-fill"></div>
+    <div class="timeline-items">
+      <div data-reveal class="tl-item">
+        <span data-tldot class="tl-dot"></span>
+        <div>
+          <div class="tl-date tl-date--current">SEP 2024 — PRESENT</div>
+          <div class="tl-company">Pine Labs</div>
+          <div class="tl-role">Software Engineer · Founding Backend, UPI Payments</div>
+        </div>
+        <ul class="tl-points">
+          <li><span class="arrow">→</span><span>Designed a generic async webhook framework in Go — reused across bank integrations with zero framework changes needed for new banks.</span></li>
+          <li><span class="arrow">→</span><span>Built a fault-tolerant SQS pipeline and a Redis-backed WebSocket server delivering real-time payment updates.</span></li>
+          <li><span class="arrow">→</span><span>Shipped BBPS bill payments, UPI collect requests, group bill-splitting, and the push-notification subsystem — all end-to-end.</span></li>
+        </ul>
+      </div>
+      <div data-reveal class="tl-item">
+        <span data-tldot class="tl-dot"></span>
+        <div>
+          <div class="tl-date">MAR 2024 — SEP 2024</div>
+          <div class="tl-company">Razorpay</div>
+          <div class="tl-role">Product Development Engineer</div>
+        </div>
+        <ul class="tl-points">
+          <li><span class="arrow">→</span><span>Led enterprise customization for multiple clients — salary structures, reimbursements, custom reports in PHP / Laravel / SQL.</span></li>
+          <li><span class="arrow">→</span><span>Built a bulk-upload framework reused across several downstream product features.</span></li>
+        </ul>
+      </div>
+      <div data-reveal class="tl-item">
+        <span data-tldot class="tl-dot"></span>
+        <div>
+          <div class="tl-date">AUG 2022 — MAR 2024</div>
+          <div class="tl-company">Razorpay</div>
+          <div class="tl-role">Product Support Engineer</div>
+        </div>
+        <ul class="tl-points">
+          <li><span class="arrow">→</span><span>Cut operational ticket load ~50% by building internal admin tooling that automated manual support workflows.</span></li>
+        </ul>
+      </div>
+      <div data-reveal class="tl-item">
+        <span data-tldot class="tl-dot"></span>
+        <div>
+          <div class="tl-date">AUG 2021 — JUL 2022</div>
+          <div class="tl-company">OLA Cabs</div>
+          <div class="tl-role">Product Support Engineer</div>
+        </div>
+        <ul class="tl-points">
+          <li><span class="arrow">→</span><span>Owned the consumer payments component — Python/Bash scripts for post-outage corrections, MySQL analysis to surface bug patterns.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="section bordered">
+  <div data-reveal class="section-label">03 / SELECTED WORK</div>
+  <div class="work-list">
+    <article data-reveal class="work-card">
+      <div class="card-bar">
+        <span class="card-dot card-dot--r"></span><span class="card-dot card-dot--y"></span><span class="card-dot card-dot--g"></span>
+        <span class="card-file">01 · pine labs · webhook-framework.go</span>
+      </div>
+      <div class="card-body">
+        <div>
+          <h3 class="card-title">Async Webhook Framework</h3>
+          <p class="card-desc">A generic webhook delivery framework in Go — worker pools, automatic retries, dead-letter handling — built once, reused across every bank integration. When Axis Bank's v3 migration landed on it, the framework needed zero changes.</p>
+          <div class="chips">
+            <span class="chip">Go</span>
+            <span class="chip">Worker pools</span>
+            <span class="chip">Dead-letter queues</span>
+            <span class="chip">Idempotency</span>
+          </div>
+          <div class="card-note">← the terminal is live, watch it retry</div>
+        </div>
+        <div class="card-aside">
+          <div class="term">
+            <div class="term-head"><span>webhook-worker · live</span></div>
+            <pre id="vf-term" class="term-body"></pre>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article data-reveal class="work-card">
+      <div class="card-bar">
+        <span class="card-dot card-dot--r"></span><span class="card-dot card-dot--y"></span><span class="card-dot card-dot--g"></span>
+        <span class="card-file">02 · pine labs · sqs-pipeline.go</span>
+      </div>
+      <div class="card-body">
+        <div>
+          <h3 class="card-title">Fault-Tolerant SQS Pipeline</h3>
+          <p class="card-desc">A two-phase message pipeline — sync-receive, async-consume — with long-polling, configurable worker pools, and soft/hard-failure retry semantics driven by visibility timeouts. Panic-isolated processing means one poisoned message never takes down a worker.</p>
+          <div class="chips">
+            <span class="chip">Go</span>
+            <span class="chip">AWS SQS</span>
+            <span class="chip">Visibility timeouts</span>
+            <span class="chip">Panic isolation</span>
+          </div>
+        </div>
+        <div class="card-aside card-aside--gap">
+          <div class="diagram">
+            <div class="diagram-label">QUEUE → WORKER POOL</div>
+            <div class="qtrack">
+              <div class="qline"></div>
+              <span class="qdot"></span>
+              <span class="qdot" style="animation-delay:.9s"></span>
+              <span class="qdot" style="animation-delay:2s"></span>
+              <div class="qworker">wrk</div>
+            </div>
+            <div class="qlegend"><span>sync-receive</span><span>async-consume</span></div>
+          </div>
+          <div class="stats">
+            <div><div class="stat-num">2-phase</div><div class="stat-label">RECEIVE → CONSUME</div></div>
+            <div><div class="stat-num">100%</div><div class="stat-label">PANIC-ISOLATED</div></div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div data-reveal class="shipped">
+    <div class="shipped-label">ALSO SHIPPED</div>
+    <div class="pills">
+      <span class="pill">Real-time WebSocket payment updates</span>
+      <span class="pill">Push-notification subsystem (FCM / SMS / WS)</span>
+      <span class="pill">UPI collect-request flow</span>
+      <span class="pill">BBPS bill payments + dispute lifecycle</span>
+      <span class="pill">Group bill-splitting</span>
+    </div>
+  </div>
+</section>
+
+<section id="stack" class="section bordered">
+  <div data-reveal class="section-label">04 / STACK</div>
+  <div class="stack-grid">
+    <div data-reveal class="stack-card">
+      <div class="stack-head">LANGUAGES</div>
+      <div class="stack-list"><span>Go</span><span>SQL</span><span>PHP</span><span>Python</span></div>
+    </div>
+    <div data-reveal class="stack-card">
+      <div class="stack-head">BACKEND</div>
+      <div class="stack-list"><span>Temporal</span><span>sqlc · goose · pgx</span><span>Laravel</span></div>
+    </div>
+    <div data-reveal class="stack-card">
+      <div class="stack-head">DATASTORES</div>
+      <div class="stack-list"><span>PostgreSQL</span><span>Redis</span></div>
+    </div>
+    <div data-reveal class="stack-card">
+      <div class="stack-head">CLOUD &amp; INFRA</div>
+      <div class="stack-list"><span>AWS — S3, SQS, KMS</span><span>Docker</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="offclock" class="section bordered">
+  <div data-reveal class="section-label">05 / OFF THE CLOCK</div>
+  <p data-reveal class="oc-intro">the parts of me that don't compile</p>
+  <div class="oc-grid">
+    <div data-reveal class="oc-card oc-card--red">
+      <div class="oc-emoji">🔴</div>
+      <div class="oc-title">Liverpool, obviously</div>
+      <p class="oc-text">Watching kickoffs at 1:30 a.m. IST is my other on-call rotation. You'll Never Walk Alone.</p>
+    </div>
+    <div data-reveal class="oc-card oc-card--green">
+      <div class="oc-emoji">⚽</div>
+      <div class="oc-title">Weekend football</div>
+      <p class="oc-text">Turf games with friends. My first touch is worse than my p99 latency, but I show up.</p>
+    </div>
+    <div data-reveal class="oc-card oc-card--dark">
+      <div class="oc-emoji">🎯</div>
+      <div class="oc-title">Valorant</div>
+      <p class="oc-text">Where I practice staying calm while everything is on fire. Transferable skill, honestly.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section bordered">
+  <div class="contact-grid">
+    <div>
+      <div data-reveal class="section-label">06 / CONTACT</div>
+      <h2 data-reveal class="contact-h2">Building something hard?<br>Let's talk.<span class="cursor">▍</span></h2>
+      <a data-reveal href="mailto:vinayfranklin98@gmail.com" class="contact-email">vinayfranklin98@gmail.com</a>
+      <div data-reveal class="contact-meta">
+        <a href="https://linkedin.com/in/vinay-franklin" target="_blank" rel="noopener">LINKEDIN ↗</a>
+        <span>+91 90744 68705</span>
+        <span>BANGALORE, IN</span>
+      </div>
+    </div>
+    <div data-reveal class="scribble-card">
+      <div class="scribble-head">
+        <span>scribble pad</span>
+        <button id="vf-clear" class="scribble-clear">clear</button>
+      </div>
+      <canvas id="vf-scribble" width="420" height="260"></canvas>
+      <div class="scribble-foot">scribble if you must — refresh fixes most crimes</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© 2026 VINAY FRANKLIN</span>
+    <span class="ynwa">YNWA</span>
+    <span>DESIGNED TO FLOW · BUILT TO NOT PAGE YOU</span>
+  </div>
+</footer>
+</div>
+</body>
+</html>
