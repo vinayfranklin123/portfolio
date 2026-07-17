@@ -18,7 +18,6 @@ a:hover { color: var(--accent) }
 
 @keyframes wordIn { from { opacity: 0; transform: translateY(40px) rotate(3deg) } to { opacity: 1; transform: translateY(0) rotate(0) } }
 @keyframes heroIn { from { opacity: 0; transform: translateY(24px) } to { opacity: 1; transform: translateY(0) } }
-@keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
 @keyframes blink { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
 @keyframes qmove { 0% { transform: translateX(0); opacity: 0 } 12% { opacity: 1 } 82% { opacity: 1 } 100% { transform: translateX(196px); opacity: 0 } }
 @keyframes qpulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(200, 16, 46, .35) } 50% { box-shadow: 0 0 0 8px transparent } }
@@ -70,11 +69,6 @@ a:hover { color: var(--accent) }
 .goal-banner.show { animation: goalPop 1.6s cubic-bezier(.22, .61, .36, 1) forwards }
 @keyframes goalPop { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.4) rotate(-6deg) } 14% { opacity: 1; transform: translate(-50%, -50%) scale(1.12) rotate(-2deg) } 30% { transform: translate(-50%, -50%) scale(1) rotate(0) } 82% { opacity: 1 } 100% { opacity: 0; transform: translate(-50%, -58%) scale(1) } }
 .vf-confetti { position: absolute; top: 0; left: 0; width: 8px; height: 13px; border-radius: 2px; z-index: 7; pointer-events: none; will-change: transform, opacity }
-
-/* ---- Marquee ---- */
-.marquee { border-bottom: 2px solid var(--ink); background: var(--accent); overflow: hidden; padding: 14px 0; position: relative; z-index: 2 }
-.marquee-track { display: flex; width: max-content; animation: marquee 26s linear infinite; font-weight: 700; font-size: 15px; letter-spacing: .1em; color: var(--cream); white-space: nowrap }
-.marquee-track span { padding-right: 40px }
 
 /* ---- Sections ---- */
 .section { max-width: 1200px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; position: relative }
@@ -234,5 +228,5 @@ a:hover { color: var(--accent) }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto }
-  .word, .badge, .hero-sub, .hero-ctas, .hero-hint, .marquee-track, .qdot, .qworker, .cursor { animation: none }
+  .word, .badge, .hero-sub, .hero-ctas, .hero-hint, .qdot, .qworker, .cursor { animation: none }
 }
