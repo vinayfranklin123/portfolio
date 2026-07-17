@@ -209,6 +209,7 @@ a:hover { color: var(--accent) }
   .ball { left: 24px }
   .goal { width: 62px; height: 84px }
   .goal-banner { top: 50% }
+  .hero-hint { max-width: calc(100% - 100px) }
   .section { padding: 72px 24px }
   #contact { padding: 80px 24px 72px }
   .about-grid, .tl-item, .card-body, .contact-grid { grid-template-columns: 1fr }
