@@ -93,9 +93,10 @@ function setupBall() {
   ball.addEventListener('click', (e) => {
     const r = ball.getBoundingClientRect();
     const dx = (r.left + r.width / 2) - e.clientX;
-    vx += dx * 0.35 + (Math.random() * 4 - 2);
-    vy -= 14 + Math.random() * 8;
-    vr += (Math.random() * 30 - 15);
+    const dir = dx >= 0 ? 1 : -1;
+    vx += dir * 9 + dx * 0.55 + (Math.random() * 3 - 1.5);
+    vy -= 17 + Math.random() * 7;
+    vr += (Math.random() * 36 - 18);
   });
   const celebrate = () => {
     if (banner) { banner.classList.remove('show'); void banner.offsetWidth; banner.classList.add('show'); }
