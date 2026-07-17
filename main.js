@@ -91,12 +91,17 @@ function setupBall() {
   const startX = ball.offsetLeft;
   let x = startX, y = 0, vx = 0, vy = 0, rot = 0, vr = 0, scored = false;
   ball.addEventListener('click', (e) => {
+    // kick along the line from the touch point through the ball's center
     const r = ball.getBoundingClientRect();
-    const dx = (r.left + r.width / 2) - e.clientX;
-    const dir = dx >= 0 ? 1 : -1;
-    vx += dir * 9 + dx * 0.55 + (Math.random() * 3 - 1.5);
-    vy -= 17 + Math.random() * 7;
-    vr += (Math.random() * 36 - 18);
+    const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    let ax = cx - e.clientX, ay = cy - e.clientY;
+    const len = Math.hypot(ax, ay);
+    if (len < 4) { ax = 0.8; ay = -0.6; }
+    else { ax /= len; ay /= len; }
+    const power = 21 + Math.random() * 5;
+    vx += ax * power;
+    vy += ay * power - 4;
+    vr += ax * power * 0.9;
   });
   const celebrate = () => {
     if (banner) { banner.classList.remove('show'); void banner.offsetWidth; banner.classList.add('show'); }
@@ -112,21 +117,32 @@ function setupBall() {
   const tick = () => {
     const W = hero.offsetWidth, H = hero.offsetHeight;
     if (!W || !H || scored) { requestAnimationFrame(tick); return; }
+    const px = x, py = y;
     vy += 0.55; x += vx; y += vy; rot += vr;
     vx *= 0.995; vr *= 0.99;
     const floor = H - ground - size;
     if (y > floor) { y = floor; vy *= -0.55; vx *= 0.92; if (Math.abs(vy) < 1.2) vy = 0; }
     if (x < 0) { x = 0; vx *= -0.7; }
-    const gL = goal ? goal.offsetLeft : Infinity;
-    const gT = goal ? goal.offsetTop : Infinity;
-    if (goal && x + size / 2 > gL && y + size / 2 > gT) {
-      scored = true;
-      x = gL + goal.offsetWidth / 2 - size / 2; y = floor;
-      ball.style.left = x + 'px'; ball.style.top = y + 'px';
-      celebrate();
-      setTimeout(reset, 1700);
-    } else if (x > W - size) { x = W - size; vx *= -0.7; }
+    if (x > W - size) { x = W - size; vx *= -0.7; }
     if (y < -200) { y = -200; vy = Math.abs(vy) * 0.5; }
+    if (goal) {
+      const gL = goal.offsetLeft, gT = goal.offsetTop, gR = gL + goal.offsetWidth;
+      const cx = x + size / 2, pcx = px + size / 2, cy = y + size / 2;
+      if (pcx <= gL && cx > gL && cy > gT + 6) {
+        // through the mouth, under the bar — goal
+        scored = true;
+        x = gL + goal.offsetWidth / 2 - size / 2; y = floor;
+        ball.style.left = x + 'px'; ball.style.top = y + 'px';
+        celebrate();
+        setTimeout(reset, 1700);
+      } else if (x + size > gL && x < gR && py + size <= gT && y + size > gT) {
+        // dropping onto the crossbar / net top — bounce off
+        y = gT - size; vy *= -0.55;
+      } else if (pcx >= gR && cx < gR && cy > gT) {
+        // hitting the back of the net from behind — bounce back
+        x = gR - size / 2; vx *= -0.7;
+      }
+    }
     ball.style.left = x + 'px';
     ball.style.bottom = 'auto';
     ball.style.top = y + 'px';
