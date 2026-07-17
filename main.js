@@ -98,7 +98,8 @@ function setupBall() {
     const len = Math.hypot(ax, ay);
     if (len < 4) { ax = 0.8; ay = -0.6; }
     else { ax /= len; ay /= len; }
-    const power = 21 + Math.random() * 5;
+    // gentler kicks on big screens; phones keep the punchier feel
+    const power = hero.offsetWidth > 860 ? 18 + Math.random() * 2 : 21 + Math.random() * 5;
     vx += ax * power;
     vy += ay * power - 4;
     vr += ax * power * 0.9;
