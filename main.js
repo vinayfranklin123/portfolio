@@ -121,7 +121,12 @@ function setupBall() {
     vy += 0.55; x += vx; y += vy; rot += vr;
     vx *= 0.995; vr *= 0.99;
     const floor = H - ground - size;
-    if (y > floor) { y = floor; vy *= -0.55; vx *= 0.92; if (Math.abs(vy) < 1.2) vy = 0; }
+    if (y > floor) {
+      y = floor; vy *= -0.55; vx *= 0.92;
+      if (Math.abs(vy) < 1.2) vy = 0;
+      if (Math.abs(vx) < 0.08) vx = 0;
+      vr = vx * 2.05; // roll without slipping: spin locked to ground speed
+    }
     if (x < 0) { x = 0; vx *= -0.7; }
     if (x > W - size) { x = W - size; vx *= -0.7; }
     if (y < -200) { y = -200; vy = Math.abs(vy) * 0.5; }
