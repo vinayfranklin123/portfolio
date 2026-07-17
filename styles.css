@@ -62,6 +62,14 @@ a:hover { color: var(--accent) }
 .hero-hint { animation: heroIn .7s ease-out both; margin-top: 56px; font-family: 'Caveat', cursive; font-size: 22px; color: var(--faded); transform: rotate(-1.5deg) }
 .ball { position: absolute; left: 120px; bottom: 0; width: 56px; height: 56px; font-size: 48px; line-height: 56px; text-align: center; cursor: pointer; user-select: none; z-index: 6; filter: drop-shadow(2px 4px 2px rgba(25, 20, 16, .25)) }
 .grass { position: absolute; bottom: 0; left: 0; right: 0; height: 12px; background: var(--green); border-top: 2px solid var(--ink) }
+.goal { position: absolute; right: 0; bottom: 12px; width: 84px; height: 110px; z-index: 3; pointer-events: none }
+.goal-net { position: absolute; inset: 0; border-top: 5px solid var(--ink); border-right: 5px solid var(--ink); border-top-right-radius: 4px; background-image: repeating-linear-gradient(45deg, rgba(25, 20, 16, .16) 0 1px, transparent 1px 8px), repeating-linear-gradient(-45deg, rgba(25, 20, 16, .16) 0 1px, transparent 1px 8px) }
+.goal.scored { animation: goalShake .45s ease }
+@keyframes goalShake { 0%, 100% { transform: translateX(0) } 25% { transform: translateX(-3px) } 50% { transform: translateX(3px) } 75% { transform: translateX(-2px) } }
+.goal-banner { position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%) scale(.4); z-index: 8; pointer-events: none; font-weight: 700; font-size: clamp(40px, 7vw, 84px); letter-spacing: -.03em; color: var(--accent); text-shadow: 4px 4px 0 var(--ink); opacity: 0 }
+.goal-banner.show { animation: goalPop 1.6s cubic-bezier(.22, .61, .36, 1) forwards }
+@keyframes goalPop { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.4) rotate(-6deg) } 14% { opacity: 1; transform: translate(-50%, -50%) scale(1.12) rotate(-2deg) } 30% { transform: translate(-50%, -50%) scale(1) rotate(0) } 82% { opacity: 1 } 100% { opacity: 0; transform: translate(-50%, -58%) scale(1) } }
+.vf-confetti { position: absolute; top: 0; left: 0; width: 8px; height: 13px; border-radius: 2px; z-index: 7; pointer-events: none; will-change: transform, opacity }
 
 /* ---- Marquee ---- */
 .marquee { border-bottom: 2px solid var(--ink); background: var(--accent); overflow: hidden; padding: 14px 0; position: relative; z-index: 2 }
@@ -205,6 +213,7 @@ a:hover { color: var(--accent) }
   .secret, .sticker { display: none }
   .hero-inner { padding: 110px 24px 90px }
   .ball { left: 24px }
+  .goal { width: 62px; height: 84px }
   .section { padding: 72px 24px }
   #contact { padding: 80px 24px 72px }
   .about-grid, .tl-item, .card-body, .contact-grid { grid-template-columns: 1fr }

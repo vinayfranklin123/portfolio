@@ -54,12 +54,42 @@ function setupReveal() {
   });
 }
 
+function confettiBurst(hero, ox, oy) {
+  const colors = ['#C8102E', '#FFD84D', '#1E7A4C', '#191410', '#FAF4E8'];
+  const parts = [];
+  for (let i = 0; i < 50; i++) {
+    const el = document.createElement('div');
+    el.className = 'vf-confetti';
+    el.style.background = colors[i % colors.length];
+    hero.appendChild(el);
+    const a = Math.random() * Math.PI * 2, s = 4 + Math.random() * 11;
+    parts.push({ el, x: ox, y: oy, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 7, r: Math.random() * 360, vr: Math.random() * 22 - 11 });
+  }
+  let t = 0;
+  const step = () => {
+    t++;
+    let alive = false;
+    for (const p of parts) {
+      p.vy += 0.4; p.x += p.vx; p.y += p.vy; p.vx *= 0.99; p.r += p.vr;
+      p.el.style.transform = 'translate(' + p.x + 'px,' + p.y + 'px) rotate(' + p.r + 'deg)';
+      p.el.style.opacity = String(Math.max(0, 1 - t / 75));
+      if (t < 75) alive = true;
+    }
+    if (alive) requestAnimationFrame(step);
+    else for (const p of parts) p.el.remove();
+  };
+  requestAnimationFrame(step);
+}
+
 function setupBall() {
   const ball = document.getElementById('vf-ball');
   const hero = document.getElementById('top');
   if (!ball || !hero || reducedMotion) return;
-  let x = ball.offsetLeft, y = 0, vx = 0, vy = 0, rot = 0, vr = 0;
+  const goal = document.getElementById('vf-goal');
+  const banner = document.getElementById('vf-goal-banner');
   const size = 56, ground = 12;
+  const startX = ball.offsetLeft;
+  let x = startX, y = 0, vx = 0, vy = 0, rot = 0, vr = 0, scored = false;
   ball.addEventListener('click', (e) => {
     const r = ball.getBoundingClientRect();
     const dx = (r.left + r.width / 2) - e.clientX;
@@ -67,15 +97,34 @@ function setupBall() {
     vy -= 14 + Math.random() * 8;
     vr += (Math.random() * 30 - 15);
   });
+  const celebrate = () => {
+    if (banner) { banner.classList.remove('show'); void banner.offsetWidth; banner.classList.add('show'); }
+    if (goal) { goal.classList.remove('scored'); void goal.offsetWidth; goal.classList.add('scored'); }
+    const ox = goal ? goal.offsetLeft + goal.offsetWidth / 2 : x;
+    const oy = goal ? goal.offsetTop + goal.offsetHeight / 2 : y;
+    confettiBurst(hero, ox, oy);
+  };
+  const reset = () => {
+    scored = false; x = startX; y = hero.offsetHeight - ground - size;
+    vx = vy = vr = rot = 0;
+  };
   const tick = () => {
     const W = hero.offsetWidth, H = hero.offsetHeight;
-    if (!W || !H) { requestAnimationFrame(tick); return; }
+    if (!W || !H || scored) { requestAnimationFrame(tick); return; }
     vy += 0.55; x += vx; y += vy; rot += vr;
     vx *= 0.995; vr *= 0.99;
     const floor = H - ground - size;
     if (y > floor) { y = floor; vy *= -0.55; vx *= 0.92; if (Math.abs(vy) < 1.2) vy = 0; }
     if (x < 0) { x = 0; vx *= -0.7; }
-    if (x > W - size) { x = W - size; vx *= -0.7; }
+    const gL = goal ? goal.offsetLeft : Infinity;
+    const gT = goal ? goal.offsetTop : Infinity;
+    if (goal && x + size / 2 > gL && y + size / 2 > gT) {
+      scored = true;
+      x = gL + goal.offsetWidth / 2 - size / 2; y = floor;
+      ball.style.left = x + 'px'; ball.style.top = y + 'px';
+      celebrate();
+      setTimeout(reset, 1700);
+    } else if (x > W - size) { x = W - size; vx *= -0.7; }
     if (y < -200) { y = -200; vy = Math.abs(vy) * 0.5; }
     ball.style.left = x + 'px';
     ball.style.bottom = 'auto';
