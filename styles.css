@@ -65,9 +65,9 @@ a:hover { color: var(--accent) }
 .goal-net { position: absolute; inset: 0; border-top: 5px solid var(--ink); border-right: 5px solid var(--ink); border-top-right-radius: 4px; background-image: repeating-linear-gradient(45deg, rgba(25, 20, 16, .16) 0 1px, transparent 1px 8px), repeating-linear-gradient(-45deg, rgba(25, 20, 16, .16) 0 1px, transparent 1px 8px) }
 .goal.scored { animation: goalShake .45s ease }
 @keyframes goalShake { 0%, 100% { transform: translateX(0) } 25% { transform: translateX(-3px) } 50% { transform: translateX(3px) } 75% { transform: translateX(-2px) } }
-.goal-banner { position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%) scale(.4); z-index: 8; pointer-events: none; font-weight: 700; font-size: clamp(40px, 7vw, 84px); letter-spacing: -.03em; color: var(--accent); text-shadow: 4px 4px 0 var(--ink); opacity: 0 }
-.goal-banner.show { animation: goalPop 1.6s cubic-bezier(.22, .61, .36, 1) forwards }
-@keyframes goalPop { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.4) rotate(-6deg) } 14% { opacity: 1; transform: translate(-50%, -50%) scale(1.12) rotate(-2deg) } 30% { transform: translate(-50%, -50%) scale(1) rotate(0) } 82% { opacity: 1 } 100% { opacity: 0; transform: translate(-50%, -58%) scale(1) } }
+.goal-banner { position: absolute; left: 50%; top: 15%; transform: translate(-50%, -50%) scale(.4) rotate(-3deg); z-index: 8; pointer-events: none; background: var(--accent); color: var(--cream); border: 3px solid var(--ink); border-radius: 16px; box-shadow: 9px 9px 0 var(--ink); padding: 14px 34px; font-weight: 700; font-size: clamp(30px, 5vw, 58px); letter-spacing: -.02em; white-space: nowrap; opacity: 0 }
+.goal-banner.show { animation: goalPop 1.7s cubic-bezier(.22, .61, .36, 1) forwards }
+@keyframes goalPop { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.3) rotate(-9deg) } 12% { opacity: 1; transform: translate(-50%, -50%) scale(1.1) rotate(-3deg) } 28% { transform: translate(-50%, -50%) scale(1) rotate(-3deg) } 80% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-3deg) } 100% { opacity: 0; transform: translate(-50%, -74%) scale(1) rotate(-3deg) } }
 .vf-confetti { position: absolute; top: 0; left: 0; width: 8px; height: 13px; border-radius: 2px; z-index: 7; pointer-events: none; will-change: transform, opacity }
 
 /* ---- Sections ---- */
@@ -208,6 +208,7 @@ a:hover { color: var(--accent) }
   .hero-inner { padding: 110px 24px 90px }
   .ball { left: 24px }
   .goal { width: 62px; height: 84px }
+  .goal-banner { top: 50% }
   .section { padding: 72px 24px }
   #contact { padding: 80px 24px 72px }
   .about-grid, .tl-item, .card-body, .contact-grid { grid-template-columns: 1fr }
